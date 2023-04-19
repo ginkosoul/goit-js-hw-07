@@ -2,7 +2,7 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 // import SimpleLightbox from "simplelightbox"
 
-console.log(galleryItems);
+// console.log(galleryItems);
 // console.log(SimpleLightbox);
 const galleryElement = document.querySelector('ul.gallery');
 
@@ -22,9 +22,10 @@ galleryElement.insertAdjacentHTML('afterbegin',createGalleryMarkup);
 galleryElement.addEventListener('click',onClick)
 
 const galleryLinks = galleryElement.querySelectorAll('a')
-// console.log(galleryLinks);
+// console.log(galleryLinks[0].querySelector('img').getAttribute('alt'));
+// const alt = galleryLinks.map(e => e.)
 
-let gallery = new SimpleLightbox(galleryLinks);
+let gallery = new SimpleLightbox(galleryLinks,{captionsData: 'alt'});
 
 gallery.on('show.simplelightbox', function () {
 	// Do something…
